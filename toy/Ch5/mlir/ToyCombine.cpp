@@ -16,11 +16,11 @@
 #include "toy/Dialect.h"
 #include <numeric>
 using namespace mlir;
-using namespace toy;
+using namespace mlir::toy;
 
 namespace {
 /// Include the patterns defined in the Declarative Rewrite framework.
-#include "ToyCombine.inc"
+#include "toy/ToyCombine.inc"
 } // namespace
 
 /// This is an example of a c++ rewrite pattern for the TransposeOp. It
