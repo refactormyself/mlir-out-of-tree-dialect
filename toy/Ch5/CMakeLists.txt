@@ -59,6 +59,10 @@ add_dependencies(toyc-ch5
   ToyCh5CombineIncGen
 )
 
+# We have used the Affine Dialect, so
+# acquire the details of dialects that comes with MLIR, so we can link to them
+get_property(dialect_libs GLOBAL PROPERTY MLIR_DIALECT_LIBS)
+
 target_link_libraries(toyc-ch5 
   PRIVATE 
   ${dialect_libs}
