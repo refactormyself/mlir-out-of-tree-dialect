@@ -20,7 +20,7 @@ using namespace toy;
 
 namespace {
 /// Include the patterns defined in the Declarative Rewrite framework.
-#include "ToyCombine.inc"
+#include "toy/ToyCombine.inc"
 } // namespace
 
 /// Fold constants.
