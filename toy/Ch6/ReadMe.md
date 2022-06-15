@@ -20,7 +20,7 @@ echo; echo; echo "===--------------------- THE TOY DIALECT IR of the input code 
 echo; echo; echo "===--------------------- THE TOY DIALECT IR (+ the partial Affine IR) lowered (converted) fully to the LLVM-IR Dialect  -----------===="
 ./build/toyc-ch6 "$TOY_CODES_DIR/example_5.toy"  -emit=mlir-llvm -opt
 
-echo; echo; echo "===------- Invoking Optimation '-opt' on the IR of the input code! -----===="
+echo; echo; echo "===------- From LLVM-IR Dialect to the LLVM IR which is out side MLIR ------===="
 ./build/toyc-ch6 "$TOY_CODES_DIR/example_5.toy"  -emit=llvm -opt
 
 echo; echo; echo "===--- Using the Jit compiler from the main LLVM to execute IR of the input code! ---==="
