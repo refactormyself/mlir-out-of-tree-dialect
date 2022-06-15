@@ -1,2 +1,9 @@
 bin
 build
+note*
+Note*
+cmake*
+.vs*
+.idea*
+
+me.sh
