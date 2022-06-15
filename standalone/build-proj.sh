@@ -1,22 +1,17 @@
 #! /usr/bin/env bash
 
 CURR_DIR=$PWD
-BUILD_DIR="/DATA/DEV/Compilers/llvm/build"
-LLVM_INSTALL="/DATA/DEV/Compilers/llvm/install"
-APP_INSTALL="$CURR_DIR/bin"
+LLVM_BUILD_DIR=$1
+LLVM_INSTALL_DIR=$2
 
 mkdir $APP_INSTALL
-rm -rf build
+# rm -rf build
 mkdir build
 cd build
 
 cmake -G Ninja .. \
-	-DMLIR_DIR=$LLVM_INSTALL/lib/cmake/mlir \
-	-DLLVM_EXTERNAL_LIT=$BUILD_DIR/bin/llvm-lit \
-        -DCMAKE_INSTALL_PREFIX=$APP_INSTALL
+	-DMLIR_DIR=$LLVM_INSTALL_DIR/lib/cmake/mlir \
+	-DLLVM_EXTERNAL_LIT=$LLVM_BUILD_DIR/bin/llvm-lit
 
 cmake --build . --target check-standalone
-
-ninja install
-
 cd $CURR_DIR
