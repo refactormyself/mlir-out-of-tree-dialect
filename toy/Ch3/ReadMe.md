@@ -18,10 +18,10 @@ It can be noticed that *no reshape operations remain after canonicalization* (op
 ### To try out
 ```bash
     echo; echo; echo "===--------------------- THE AST (IR) of the input code  -----------===="
-    ./build/toyc-ch2 "$TOY_CODES_DIR/example_2.toy"  -emit=ast
+    ./build/toyc-ch3 "$TOY_CODES_DIR/example_2.toy"  -emit=ast
 
     echo; echo; echo "===--------------------- THE TOY DIALECT IR of the input code ----------===="
-    ./build/toyc-ch2 "$TOY_CODES_DIR/example_2.toy"  -emit=mlir
+    ./build/toyc-ch3 "$TOY_CODES_DIR/example_2.toy"  -emit=mlir
 
     echo; echo; echo "===------- Invoking Optimation '-opt' on the TOY DIALECT IR of the input code => MAGIC !!! -----===="
     ./build/toyc-ch3 "$TOY_CODES_DIR/example_2.toy"  -emit=mlir -opt
