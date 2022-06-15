@@ -1,0 +1,16 @@
+
+# User defined generic function that operates on unknown shaped arguments.
+def multiply_transpose(a, b) {
+  return transpose(a) * transpose(b);
+}
+
+def main() {
+    var a<2,2> = [[1 ,2], [3, 4]];
+    var b<2,2> = [1, 2, 3, 4];
+    var c = multiply_transpose(a, b);
+
+    var d<2,2> = a + b;
+    
+    print(c);
+    #print(d);
+}

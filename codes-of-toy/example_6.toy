@@ -1,0 +1,29 @@
+
+#define N 100
+#define M 100
+
+void sink(void *);
+void double_transpose(int A[N][M]) {
+  int B[M][N];
+  for(int i = 0; i < N; ++i) {
+    for(int j = 0; j < M; ++j) {
+       B[j][i] = A[i][j];
+    }
+  }
+  for(int i = 0; i < N; ++i) {
+    for(int j = 0; j < M; ++j) {
+       A[i][j] = B[j][i];
+    }
+  }
+  sink(A);
+}
+
+def main() {
+    var a<2,2> = [[1 ,2], [3, 4]];
+    var b<2,2> = [1, 2, 3, 4];
+    var c = multiply_transpose(a, b);
+
+    var d<2,2> = a + b;
+    
+    print(c);
+}
