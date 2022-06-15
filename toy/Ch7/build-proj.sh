@@ -1,27 +1,16 @@
 #! /usr/bin/env bash
 
 CURR_DIR=$PWD
-BUILD_DIR="/DATA/DEV/Compilers/llvm/build"
-LLVM_INSTALL="/DATA/DEV/Compilers/llvm/install"
-APP_INSTALL="$CURR_DIR/bin"
+LLVM_BUILD_DIR=$1
+LLVM_INSTALL_DIR=$2
 
-rm -rf $APP_INSTALL
 rm -rf build
-
-mkdir $APP_INSTALL
 mkdir build
 cd build
 
-export CC=$LLVM_INSTALL/bin/clang
-export CXX=$LLVM_INSTALL/bin/clang++
-
-#$CXX --version
-
 cmake -G Ninja .. \
-	-DMLIR_DIR=$LLVM_INSTALL/lib/cmake/mlir \
-    -DCMAKE_INSTALL_PREFIX=$APP_INSTALL 
-	# -DLLVM_EXTERNAL_LIT=$BUILD_DIR/bin/llvm-lit 
+	-DMLIR_DIR=$LLVM_INSTALL_DIR/lib/cmake/mlir
 
-cmake --build . --target install
+cmake --build .
 
 cd $CURR_DIR
